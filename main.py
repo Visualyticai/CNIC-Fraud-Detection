@@ -16,38 +16,41 @@ sizes = [[[5, 0], [175, 90]],
          [[440, 0], [485, 90]],
          [[55, 95], [225, 200]],
          [[270, 95], [440, 200]],
-         [[5, 205], [175, 305]],
+         [[5, 205], [175, 305]], s
          [[225, 205], [395, 305]],
          [[440, 205], [485, 305]]
-		]
+         ]
 
-# Main fucntion
+
+# Main Function
 def main_func(img1_location, img2_location):
-  # Value initialization
-  sum = 0
+    # Value initialization
+    Sum = 0
 
-  # Loading in the images
-  image1 = cv2.imread(img1_location, 0)
-  image2 = cv2.imread(img2_location, 0)
+    # Loading in the images
+    image1 = cv2.imread(img1_location, 0)
+    image2 = cv2.imread(img2_location, 0)
 
-  # Resizing in the images
-  image1 = cv2.resize(image1, (2500, 1550))
-  image2 = cv2.resize(image2, (2500, 1550))
+    # Resizing in the images
+    image1 = cv2.resize(image1, (500, 300))
+    image2 = cv2.resize(image2, (500, 300))
 
-  cv2.imshow("Image 1", image1)
+    cv2.imshow("Image 1", image1)
 
-  cv2.imshow("Image 2", image2)
+    cv2.imshow("Image 2", image2)
 
-  # Looping over the sizes array and adding the Cosine similarity between both images at same patches
-  for size in sizes:
-    sum += 1 - cosine_similarity(image1[size[0][1]:size[1][1], size[0][0]:size[1][0]].reshape(1,-1), image2[size[0][1]:size[1][1], size[0][0]:size[1][0]].reshape(1,-1))
+    # Looping over the sizes array and adding the Cosine similarity between both images at same patches
+    for size in sizes:
+        Sum += 1 - cosine_similarity(image1[size[0][1]:size[1][1], size[0][0]:size[1][0]].reshape(1, -1),
+                                     image2[size[0][1]:size[1][1], size[0][0]:size[1][0]].reshape(1, -1))
 
-  print("Sum:", sum)
+    print("Sum:", Sum)
 
-  average = sum / 8
+    Average = Sum / 8
 
-  print("Average:", average)
+    print("Average:", Average)
 
-  return average
+    return Average
+
 
 main_func(image1_location, image2_location)
