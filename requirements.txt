@@ -1,4 +1,5 @@
 cv2==4.1.2
 numpy==1.18.5
+skimage==0.16.2
 matplotlib==3.2.2
 sklearn==0.22.2.post1
