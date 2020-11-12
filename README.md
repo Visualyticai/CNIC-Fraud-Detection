@@ -5,7 +5,7 @@ The main.py file uses the two images in the images/ folder:
 - image2.jpeg
 
 There are three files as of now, all the files are different algorithms of comparing images:
-- cosineComparing.py --> uses cosingsimilarity
+- cosineComparing.py --> uses cosineSimilarity
 - MSEComparing.py --> uses MSE
 - SSIMComparing.py --> uses SSIM
 
