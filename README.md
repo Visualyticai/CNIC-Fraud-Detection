@@ -10,3 +10,7 @@ There are three files as of now, all the files are different algorithms of compa
 - SSIMComparing.py --> uses SSIM
 
 Best so far, the algorithm which shows the maximum difference is `MSE`.
+
+# Data Set Generation
+
+Uses the images saved in images/ folder and applies a couple of Augmentations and saves them in Generated/.
