@@ -5,7 +5,7 @@ import random
 import numpy as np
 
 # file number counter
-counter = 0
+counter = 1
 
 
 def returnFileName(temp):
@@ -82,7 +82,8 @@ def sharpen(img):
 
 for IMG in os.listdir("./images/"):
 
-    if IMG[-4:] not in [".png", "jpeg", ".jpg"]:
+    # Checking for image types
+    if IMG.split(".")[1] not in ["png", "jpeg", "jpg"]:
         continue
 
     # Loading images
